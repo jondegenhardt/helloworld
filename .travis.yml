@@ -1,17 +1,24 @@
 sudo: false
 os:
- - linux
- - osx
+- linux
+- osx
 language: d
 d:
- - ldc
- - dmd
+- ldc
+- dmd
 script:
- - make test DCOMPILER=$DC
- - if [[ -z "$TRAVIS_TAG" || "$TRAVIS_TAG" == "" ]]; then
-     export USE_VERSION="v~dev"; else
-     export USE_VERSION="$TRAVIS_TAG";
-   fi
- - make package DCOMPILER=$DC OS=$TRAVIS_OS_NAME APP_VERSION=$USE_VERSION
- - echo "Done"
- 
+- make test DCOMPILER=$DC
+- if [[ -z "$TRAVIS_TAG" || "$TRAVIS_TAG" == "" ]]; then export USE_VERSION="v~dev";
+  else export USE_VERSION="$TRAVIS_TAG"; fi
+- make package DCOMPILER=$DC OS=$TRAVIS_OS_NAME APP_VERSION=$USE_VERSION
+- echo "Done"
+deploy:
+  provider: releases
+  api_key:
+    secure: qtUrVfkiM3MNlsOiKtLvTyvbWyxckv8y7vA32N8bZ+mPzK0nyFDmTnqnBUSFZ3JOQjNfWzIbaMIoLk0St5h+WzEmjmh5tQDYYH7otMS5ihfjUa9xzKG3ZfaVi8/DtQopIAZ0XwLNmRvhcu6EOotmpUg79Yh6pGWOh3GbmcuMJ+cfw9xADZLhHoM+YPtloBgLkJnQQc6BvCGCGOKOnTOibpMGkHFa58lGUvLLwt5RK4CgYYcKSxc7kB06jswA+h2w9dLkPpw9Yetzy+rS30f+zkjC/8N5JA4YQK15E9jsqnRYu0NCQD2y/oRxV2cqyTVvUuBldxkrpkdaiPvFHZgkb82OpUSzVnb9I6DaKNlkooZ1rYuscMat8ll1C1rytJJ8VTunY9p12sUD7ud+FFOEf7YnwR708CCVHRVr87/En3iw3rQKNVfKal0e0CSRqNw9DPNrLpCJVLNKA0W88J3tUMb4NfgpkFnVdW7079uWT3B+dzzC6MS5e7AeUwo4vAQYYEu5kF39hLCoXNW7CzOFkW16h3x2OfXNsuFoH5PWIRWGOfghy8cStQ9UWWyHHm4xRndvIiREJ1CtLSP3zLFWXTphMSlJsQEYxIc37WbiEFqmlxwrhwiVfFVQ87/FTtW0fvR5kXL5DfYmEA0y+JQkA5SvWxP0xYXIyqcE/zLmhT8=
+  file_glob: true
+  file: ./*.tar.gz
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: jondegenhardt/helloworld
