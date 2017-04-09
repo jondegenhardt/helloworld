@@ -24,6 +24,8 @@ clean:
 	-rm $(objdir)/*.o
 	-rm $(bindir)/*
 
+test: release test-nobuild
+
 test-nobuild:
 	$(app)
 
