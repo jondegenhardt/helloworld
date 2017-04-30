@@ -10,7 +10,7 @@ This is a personal repository is used for experimenting with various features of
 
 #### Special characters
 
-Single quotes, double quotes, and vertical bars are an issue on raw GitHub pages. e.g. '--a|abc num [,num...]'. Whereas backquote is fine: `--a|abc num [,num...]`. But suppose you want the single quote?
+Single quotes, double quotes, and vertical bars are an issue on raw GitHub pages. e.g. '--a|abc num [,num...]'. Whereas backquote is fine: `--a|abc num [,num...]`. But suppose you want the single quote? And, as this example shows, vertical bars initiate unwanted tables.
 
 First bit is to turn off "smart quote" generation. Add the following to the _config.yml file:
 ```
@@ -18,7 +18,7 @@ kramdown:
   smart_quotes: apos,apos,quot,quot
 ```
 
-This get the single quotes generated correctly (already done in this repo). However, the vertical bar within a single quote block will still initiate an unwanted table. 
+This gets the single quotes generated correctly (already done in this repo). However, the vertical bar within a single quote block will still initiate an unwanted table. 
 
 Try 2: Escape vertical bars and double-dash with a backslash: `\--a\|abc num [,num...]` => '\--a\|abc num [,num...]'. How did this do? Good. It avoids table creation, and verticle bars and double-dashes are correctly rendered in GitHub pages and the rendered markdown page.
 
