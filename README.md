@@ -20,10 +20,11 @@ kramdown:
 
 This get the single quotes generated correctly (already done in this repo). However, the vertical bar within a single quote block will still initiate an unwanted table. 
 
-Try 2: Escape a vertical bars with a backslash: '--a\|abc num [,num...]'. How did this do?
+Try 2: Escape a vertical bars with a backslash: '--a\|abc num [,num...]'. How did this do? Well, it avoids table creation, but the verticle bar doesn't show up. And, there does not appear to be any way to avoid double dash converting to the single character double dash. Remedy - Put all such references in backslashes, whether that's what is wanted or not.
 
 Code regions as another consideration. GitHub pages gets these correct by default.
 ```
+$ # command-line-command --a|arg value --b|arg2 value2
 $ command-line-command --arg value --arg2 value2
 Some output
 More output
