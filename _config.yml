@@ -1,2 +1,5 @@
 theme: jekyll-theme-slate
 encoding: utf-8
+redcarpet:
+  extensions: [fenced_code_blocks]
+  
