@@ -1,5 +1,4 @@
 theme: jekyll-theme-slate
 encoding: utf-8
-markdown: redcarpet
 kramdown:
   smart_quotes: apos,apos,quot,quot
