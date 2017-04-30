@@ -1,6 +1,8 @@
 # Hello World: Experimentation repository
 
-This is a personal repository is used for experimenting with various features of GitHub, Travis-CI, and other on-line features that are difficult to experiment with locally. There is nothing particularly interesting here.
+There is nothing particularly interesting here.
+
+This is a personal repository is used for experimenting with various features of GitHub, Travis-CI, and other on-line features that are difficult to experiment with locally. 
 
 ## GitHub Pages
 
