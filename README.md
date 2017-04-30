@@ -32,9 +32,13 @@ Some output
 More output
 ```
 
-##### Unquoted: In a -- heading | header line?
+How about headings? These sampls sugget escaped double-dash but not vertical bar.
 
-##### Quoted: In a \-- heading \| header line?
+##### Raw: In a --heading|header line?
+
+##### Escaped: In a \--heading\|header line?
+
+##### Backquotes: In a `--heading|header` line?
 
 ### GitHub Pages generated material
 
