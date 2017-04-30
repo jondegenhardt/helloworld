@@ -1,4 +1,4 @@
 theme: jekyll-theme-slate
 encoding: utf-8
 kramdown:
-  smart_quotes: ["apos", "apos", "quot", "quot"]
+  smart_quotes: apos,apos,quot,quot
