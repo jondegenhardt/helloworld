@@ -1,4 +1,4 @@
-## Experimentation repository
+# Experimentation repository
 
 This repository is used for experimenting with various features of GitHub, Travis-CI, and other on-line features that are difficult to experiment with locally.
 
