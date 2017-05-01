@@ -1,6 +1,5 @@
 theme: jekyll-theme-cayman
 encoding: utf-8
-show_downloads: ["true"]
 markdown: kramdown
 kramdown:
   smart_quotes: apos,apos,quot,quot
