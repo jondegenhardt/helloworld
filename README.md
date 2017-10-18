@@ -32,13 +32,22 @@ Some output
 More output
 ```
 
-How about headings? These sampls sugget escaped double-dash but not vertical bar.
+How about headings? These samples suggest escaped double-dash but not vertical bar.
 
 ##### Raw: In a --heading|header line?
 
 ##### Escaped: In a \--heading\|header line?
 
 ##### Backquotes: In a `--heading|header` line?
+
+Tables are next.
+
+| Header           | Header 2   |
+| ---------------- | --------- |
+| Embedded \| pipe | Column 2 entry |
+| More text        | Colimn 2 row 2 |
+| `code \| with pipe` | Column 2 row 3 |
+
 
 ### GitHub Pages generated material
 
