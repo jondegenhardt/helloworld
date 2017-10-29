@@ -27,7 +27,7 @@ $(app): $(appsrc)
 
 $(dockerldc):
 	mkdir -p $(scriptdir)
-	echo '#!/bin/sh\ndocker run --rm -ti -v $$(pwd):/src $(DOCKER_LDC_IMAGE) ldc2 $$*' > $(dockerldc)
+	echo '#!/bin/sh\ndocker run --rm -ti -u `stat -c "%u:%g" .` -v $$(pwd):/src $(DOCKER_LDC_IMAGE) ldc2 $$*' > $(dockerldc)
 	chmod a+x $(dockerldc)
 
 clean:
