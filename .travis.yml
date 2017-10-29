@@ -9,7 +9,7 @@ matrix:
       osx_image: xcode9
       language: d
       d: ldc-1.2.0
-      env: XDC=ldc DFLAGS_STATIC=
+      env: XDC=ldc2 DFLAGS_STATIC=
     - os: osx
       osx_image: xcode9
       language: d
@@ -36,6 +36,7 @@ matrix:
       env: XDC=./script/docker-ldc.sh DFLAGS_STATIC=-static
 script:
 - make test project_dir=. DCOMPILER=$XDC DFLAGS=$DFLAGS_STATIC
+- ls -l *
 - ls -l ./bin/*
 - if [[ -z "$TRAVIS_TAG" || "$TRAVIS_TAG" == "" ]]; then export USE_VERSION="v~dev";
   else export USE_VERSION="$TRAVIS_TAG"; fi
