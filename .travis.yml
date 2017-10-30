@@ -39,9 +39,16 @@ before_install:
       sudo apt-get -qq update;
       sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce;
       docker pull dlanguage/ldc;
+      export UID=$(id -u);
+      export GID=$(id -g);
+      echo "UID=$UID, GID=$GID";
     fi
 script:
-- make test project_dir=. DCOMPILER=$XDC DFLAGS=$DFLAGS_STATIC
+- make release project_dir=. DCOMPILER=$XDC DFLAGS=$DFLAGS_STATIC
+- if [[ "$XLC" == "1" ]]; then
+    sudo chown -R $UID:$GID;
+  fi
+- make test-nobuild
 - id -u
 - ls -l *
 - ls -l ./bin/*
