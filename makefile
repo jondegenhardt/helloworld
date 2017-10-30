@@ -27,7 +27,7 @@ $(app): $(appsrc)
 
 $(dockerldc):
 	mkdir -p $(scriptdir)
-	echo '#!/bin/sh\nuid=`id -u`\necho "$$uid"\ndocker run --rm -ti --user "$$uid" -v $$(pwd):/src $(DOCKER_LDC_IMAGE) ldc2 $$*' > $(dockerldc)
+	echo '#!/bin/sh\nuid=`id -u`\necho "$$uid"\ndocker run --rm -ti --user "$$uid" -v $$(pwd):/src $(DOCKER_LDC_IMAGE) /dlang/ldc-1.4.0-beta1/bin/ldc2 $$*' > $(dockerldc)
 	chmod a+x $(dockerldc)
 
 clean:
