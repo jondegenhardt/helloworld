@@ -38,7 +38,7 @@ before_install:
   - if [[ "$XLC" == "1" ]]; then
       sudo apt-get -qq update;
       sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce;
-      docker pull dlanguage/ldc
+      docker pull dlanguage/ldc;
     fi
 script:
 - make test project_dir=. DCOMPILER=$XDC DFLAGS=$DFLAGS_STATIC
