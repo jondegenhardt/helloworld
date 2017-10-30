@@ -33,20 +33,16 @@ matrix:
       language: d
       d: ldc-1.5.0-beta1
       services: docker
-      env: XDC=./script/docker-ldc.sh DFLAGS_STATIC=-static
-    - os: linux
-      dist: trusty
-      sudo: required
-      language: d
-      d: ldc-1.5.0-beta1
-      env: XDC=ldc2 DFLAGS_STATIC=-static XLC=1
+      env: XLC=1 XDC=./script/docker-ldc.sh DFLAGS_STATIC=-static
 before_install:
   - if [[ "$XLC" == "1" ]]; then
       sudo apt-get -qq update;
-      sudo apt-get install -y libc6;
+      sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce;
+      docker pull dlanguage/ldc
     fi
 script:
 - make test project_dir=. DCOMPILER=$XDC DFLAGS=$DFLAGS_STATIC
+- id -u
 - ls -l *
 - ls -l ./bin/*
 - if [[ -z "$TRAVIS_TAG" || "$TRAVIS_TAG" == "" ]]; then export USE_VERSION="v~dev";

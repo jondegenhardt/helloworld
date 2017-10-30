@@ -27,7 +27,7 @@ $(app): $(appsrc)
 
 $(dockerldc):
 	mkdir -p $(scriptdir)
-	echo '#!/bin/sh\ndocker run --rm -ti -u `stat -c "%u:%g" .` -v $$(pwd):/src $(DOCKER_LDC_IMAGE) ldc2 $$*' > $(dockerldc)
+	echo '#!/bin/sh\nuid=`id -u`\necho "$$uid"\ndocker run --rm -ti --user "$$uid" -v $$(pwd):/src $(DOCKER_LDC_IMAGE) ldc2 $$*' > $(dockerldc)
 	chmod a+x $(dockerldc)
 
 clean:
@@ -45,4 +45,3 @@ package: clean release test-nobuild
 	cp -pr $(bindir) $(PKG_DIR)
 	tar -czf $(TAR_FILE) $(PKG_DIR)
 	-rm -r $(PKG_DIR)
-
