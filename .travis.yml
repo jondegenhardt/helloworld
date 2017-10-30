@@ -46,7 +46,7 @@ before_install:
 script:
 - make release project_dir=. DCOMPILER=$XDC DFLAGS=$DFLAGS_STATIC
 - if [[ "$XLC" == "1" ]]; then
-    sudo chown -R $UID:$GID;
+    sudo chown -R $UID:$GID $(pwd);
   fi
 - make test-nobuild
 - id -u
