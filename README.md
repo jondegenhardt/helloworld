@@ -7,6 +7,8 @@ This is a personal repository is used for experimenting with various features of
 Some random text to create a trivial change.
 Sometimes even more change is good.
 More change.
+More change!
+And more!
 
 ## GitHub Pages
 
