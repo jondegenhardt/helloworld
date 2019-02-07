@@ -1,1 +1,2 @@
 A simple text file.
+The second line in the simple text file.
