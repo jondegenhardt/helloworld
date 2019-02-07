@@ -6,3 +6,5 @@ Fifth line in the file.
 Sixth line in the file.
 Seventh line in the file
 Eighth line in the file
+Ninth line in the file
+Tenth line in the file
