@@ -1,3 +1,4 @@
 A simple text file.
 The second line in the simple text file.
 Third line in the file.
+Forth line in the file.
