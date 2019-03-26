@@ -1,4 +1,6 @@
-<header>An HTML title tag: Is it rendered?</header>
+<title>An HTML title tag: Is it rendered?</title>
+
+<header>An HTML header tag: Is it rendered?</header>
 
 # Level 1 Header
 
