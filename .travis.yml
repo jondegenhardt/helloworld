@@ -11,6 +11,9 @@ script:
 - if [[ -z "$TRAVIS_TAG" || "$TRAVIS_TAG" == "" ]]; then export USE_VERSION="v~dev";
   else export USE_VERSION="$TRAVIS_TAG"; fi
 - make package DCOMPILER=$DC OS=$TRAVIS_OS_NAME APP_VERSION=$USE_VERSION
+- echo "----- env -----"
+- env
+- echo "----- env -----"
 - echo "Done"
 deploy:
   provider: releases
